@@ -4,7 +4,7 @@
 #include <iostream>
 
 class Vector2 {
-    private:
+    protected:
         float x;
         float y;
 
@@ -30,6 +30,7 @@ class Vector2 {
         
         // norm
         float norm();
+        // angle
         float angle();
 
         // vector addition and subtraction
@@ -51,6 +52,7 @@ class Vector2 {
         // cross product
         friend float operator%(Vector2 a, Vector2 b);
 
+        // output formatting
         friend std::ostream &operator<<(std::ostream &output, Vector2 v);
 };
 
