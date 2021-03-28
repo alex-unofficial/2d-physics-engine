@@ -30,6 +30,7 @@ class Vector2 {
         
         // norm
         float norm();
+        float angle();
 
         // vector addition and subtraction
         friend Vector2 operator+(Vector2 a, Vector2 b);

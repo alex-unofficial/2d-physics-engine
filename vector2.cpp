@@ -36,6 +36,10 @@ float Vector2::norm() {
     return sqrt(x*x + y*y);
 }
 
+float Vector2::angle() {
+    return atan2(y, x);
+}
+
 Vector2 operator+(Vector2 a, Vector2 b) {
     return Vector2(a.x + b.x , a.y + b.y);
 }

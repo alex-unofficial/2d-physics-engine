@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    Vector2 x = {5,3};
+    Vector2 x = {-1,-1};
     Vector2 y = {3,6};
     Vector2 z = x - y;
     Vector2 w = x * 2;
@@ -24,7 +24,7 @@ int main() {
     cout << x * y << endl;
     
     cout << x.norm() << endl;
-    cout << w.norm() << endl;
+    cout << x.angle() << endl;
 
     cout << x % y << endl;
 }
