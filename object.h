@@ -18,8 +18,9 @@ class Object {
 
     public:
         Object(float m, Vector2 r, Vector2 v, Vector2 a);
-
         virtual ~Object();
+        
+        virtual void Update(float dt);
 };
 
 #endif

@@ -10,3 +10,8 @@ Object::Object(float m, Vector2 r, Vector2 v, Vector2 a) {
 Object::~Object() {
     // empty for now
 }
+
+void Object::Update(float dt) {
+    r = r + v * dt;
+    v = v + a * dt;
+}
