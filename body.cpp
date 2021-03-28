@@ -12,6 +12,6 @@ Body::~Body() {
 }
 
 void Body::Update(float dt) {
-    r = r + v*dt;
-    v = v + a*dt;
+    r += v*dt;
+    v += a*dt;
 }

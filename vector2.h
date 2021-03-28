@@ -33,12 +33,16 @@ class Vector2 {
 
         // vector addition and subtraction
         friend Vector2 operator+(Vector2 a, Vector2 b);
+        void operator+=(Vector2 b);
+
         friend Vector2 operator-(Vector2 v);
         friend Vector2 operator-(Vector2 a, Vector2 b);
+        void operator-=(Vector2 b);
 
         // vector scaling
         friend Vector2 operator*(float k, Vector2 v);
         friend Vector2 operator*(Vector2 v, float k);
+        void operator*=(float k);
 
         // inner product 
         friend float operator*(Vector2 a, Vector2 b);

@@ -40,6 +40,10 @@ Vector2 operator+(Vector2 a, Vector2 b) {
     return Vector2(a.x + b.x , a.y + b.y);
 }
 
+void Vector2::operator+=(Vector2 b) {
+    *this = *this + b;
+}
+
 Vector2 operator-(Vector2 v) {
     return Vector2(-v.x, -v.y);
 }
@@ -48,12 +52,20 @@ Vector2 operator-(Vector2 a, Vector2 b) {
     return a + (-b);
 }
 
+void Vector2::operator-=(Vector2 b) {
+    *this = *this - b;
+}
+
 Vector2 operator*(float k, Vector2 v) {
     return Vector2(k * v.x , k * v.y);
 }
 
 Vector2 operator*(Vector2 v, float k) {
     return Vector2(k * v.x , k * v.y);
+}
+
+void Vector2::operator*=(float k) {
+    *this = *this * k;
 }
 
 float operator*(Vector2 a, Vector2 b) {

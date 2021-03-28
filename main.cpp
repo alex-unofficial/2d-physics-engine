@@ -11,6 +11,8 @@ int main() {
     Vector2 y = {3,6};
     Vector2 z = x - y;
     Vector2 w = x * 2;
+    
+    w += y;
 
     Body o = Body(10, {0,0}, {0,0}, {0,0});
 
