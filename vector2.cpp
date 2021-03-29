@@ -40,6 +40,10 @@ float Vector2::angle() {
     return atan2(y, x);
 }
 
+Vector2 Vector2::unit() {
+    return *this / this->norm();
+}
+
 Vector2 operator+(Vector2 a, Vector2 b) {
     return Vector2(a.x + b.x , a.y + b.y);
 }
@@ -70,6 +74,14 @@ Vector2 operator*(Vector2 v, float k) {
 
 void Vector2::operator*=(float k) {
     *this = *this * k;
+}
+
+Vector2 operator/(Vector2 v, float k) {
+    return Vector2(v.x /k , v.y /k);
+}
+
+void Vector2::operator/=(float k) {
+    *this = *this / k;
 }
 
 float operator*(Vector2 a, Vector2 b) {

@@ -33,6 +33,8 @@ class Vector2 {
         // angle
         float angle();
 
+        Vector2 unit();
+
         // vector addition and subtraction
         friend Vector2 operator+(Vector2 a, Vector2 b);
         void operator+=(Vector2 b);
@@ -45,6 +47,9 @@ class Vector2 {
         friend Vector2 operator*(float k, Vector2 v);
         friend Vector2 operator*(Vector2 v, float k);
         void operator*=(float k);
+
+        friend Vector2 operator/(Vector2 v, float k);
+        void operator/=(float k);
 
         // inner product 
         friend float operator*(Vector2 a, Vector2 b);
