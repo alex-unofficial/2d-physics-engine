@@ -28,7 +28,7 @@ Force Body::sumF() {
 }
 
 void Body::Update() {
-    for(auto f: this->F)
+    for(auto& f: this->F)
         f.Update();
 
     Force Ft = this->sumF();
