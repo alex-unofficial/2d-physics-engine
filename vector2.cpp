@@ -33,7 +33,7 @@ bool operator!=(Vector2 a, Vector2 b) {
 }
 
 float Vector2::norm() {
-    return sqrt(x*x + y*y);
+    return std::sqrt(x*x + y*y);
 }
 
 float Vector2::angle() {
@@ -42,6 +42,10 @@ float Vector2::angle() {
 
 Vector2 Vector2::unit() {
     return *this / this->norm();
+}
+
+Vector2 Vector2::perp() {
+    return Vector2(-y , x);
 }
 
 Vector2 operator+(Vector2 a, Vector2 b) {

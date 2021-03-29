@@ -1,3 +1,4 @@
+#include <iostream>
 #include <algorithm>
 
 #include "body.h"
@@ -36,5 +37,4 @@ void Body::Update() {
 
     v += a*dt;
     r += v*dt;
-    
-    }
+}

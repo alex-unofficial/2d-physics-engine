@@ -32,8 +32,10 @@ class Vector2 {
         float norm();
         // angle
         float angle();
-
+        // unit
         Vector2 unit();
+        // perpendicular vector
+        Vector2 perp();
 
         // vector addition and subtraction
         friend Vector2 operator+(Vector2 a, Vector2 b);
