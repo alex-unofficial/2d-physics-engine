@@ -8,20 +8,12 @@
 using namespace std;
 
 int main() {
-    Body b = Body(60, 10, {0,0}, {2,2}, {0,0});
+    Body b = Body(60, 10, {10,0}, {0,5}); 
 
-    Force f = Force({1, 1});
-    Force g = Force([&b](){return -3 * b.getVel();});
+    b.addForce(Force([&](){return -(10 * (b.getVel().norm()) * (b.getVel().norm()) / b.getPos().norm())*(b.getPos().unit());}));
 
-    cout << f << g << endl;
-
-    b.Update();
-    g.Update();
-
-    cout << f << g << endl;
-
-    b.Update();
-    g.Update();
-
-    cout << f << g << endl;
+    for(int i = 0 ; i < 240 ; i++) {
+        b.Update();
+        cout << b.getPos() << "   \t"  << b.getVel().norm() << " " << b.getPos().norm() << endl ;
+    }
 }

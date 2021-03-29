@@ -4,6 +4,10 @@ Force::Force(Vector2 v) : Vector2(v) {
     this->func = [v]() -> Vector2 {return v;};
 }
 
+Force::Force(const Force &f) : Vector2(f) {
+    this->func = f.func;
+}
+
 Force::Force(std::function<Vector2()> func) : Vector2(func()) {
     this->func = func;
 }

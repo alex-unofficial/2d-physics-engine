@@ -3,7 +3,8 @@
 
 #include <functional>
 
-#include "body.h"
+#include "object.h"
+#include "vector2.h"
 
 class Force : public Object, public Vector2 {
     private:
@@ -11,6 +12,7 @@ class Force : public Object, public Vector2 {
 
     public:
         Force(Vector2 v);
+        Force(const Force &f);
         Force(std::function<Vector2()> func);
 
         void Update();

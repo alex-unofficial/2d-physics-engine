@@ -1,8 +1,11 @@
 #ifndef BODY
 #define BODY
 
+#include <vector>
+
 #include "object.h"
 #include "vector2.h"
+#include "force.h"
 
 class Body : public Object {
     protected:
@@ -14,8 +17,10 @@ class Body : public Object {
         Vector2 v;  // velocity
         Vector2 a;  // acceleration
 
+        std::vector<Force> F;
+
     public:
-        Body(int FPS, float mass, Vector2 r, Vector2 v, Vector2 a);
+        Body(int FPS, float mass, Vector2 r, Vector2 v);
         ~Body();
 
         void setFPS(int FPS) {this->dt = 1.0/FPS;}
@@ -30,6 +35,9 @@ class Body : public Object {
         Vector2 getPos() {return this->r;}
         Vector2 getVel() {return this->v;}
         Vector2 getAcc() {return this->a;}
+
+        void addForce(Force f);
+        Force sumF();
 
         void Update();
 };
